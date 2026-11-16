@@ -19,7 +19,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Association Tassakat pour le Développement et la Coopération","alternateName":"Tassakat","description":"Association communautaire de Douar Tassakat (Aït Abdellah, province de Taroudant, Souss-Massa, Maroc).","address":{"@type":"PostalAddress","addressLocality":"Douar Tassakat, Aït Abdellah","addressRegion":"Souss-Massa","addressCountry":"MA"},"areaServed":"Province de Taroudant"}</script>
 <link href="assets/logo/favicon.png" rel="icon"/><!-- favicon remplaçable -->
 <style>
-/* ===== Palette & typographie ===== */
+/* ===== Palette & typographie (modifiable ici) ===== */
 :root{
   --green:#1F4D3A; --green2:#163829; --sage:#8FA68E; --sage-l:#DDE6DB;
   --sand:#E9DDC4; --sand-l:#F3ECDB; --cream:#FAF7F0; --ink:#2B2F2D; --mute:#5E655F; --ochre:#9A5B1E;
@@ -213,7 +213,16 @@ footer nav{display:flex;flex-direction:column;gap:6px}
 footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
 .signature{font-style:italic;color:var(--sand)}
 .copy{text-align:center;padding:18px 20px;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem}
-#socials{display:flex;flex-wrap:wrap;gap:10px}
+#socials{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#socials a{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;color:#fff;background:rgba(255,255,255,.07);text-decoration:none;transition:background .2s,transform .2s}
+#socials a:hover{background:var(--sage);transform:translateY(-2px)}
+#socials svg{width:21px;height:21px;display:block;fill:currentColor}
+.contact .line{display:flex;align-items:flex-start;gap:10px}
+.contact .line .contact-ico{width:22px;height:22px;flex:0 0 22px;color:var(--green);margin-top:3px}
+.contact .line .contact-ico svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact .line .line-content{min-width:0}
+.contact .line b{display:inline-block;margin-inline-end:4px}
+@media(max-width:480px){#socials a{width:42px;height:42px}}
 
 /* Retour haut & lightbox */
 .totop{position:fixed;inset-block-end:20px;inset-inline-end:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--green);color:#fff;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:40}
@@ -574,7 +583,6 @@ html[lang="ar"] .hero-bg[data-illustrative="true"]::after{content:"صورة تو
 <h3 data-i18n="t128">Un partenariat fondé sur la confiance et des objectifs communs</h3>
 <p data-i18n="t129">Nous considérons nos partenaires comme des acteurs essentiels de la réussite des projets de développement de Tassakat. En travaillant ensemble, nous souhaitons construire des collaborations dans lesquelles chaque partie apporte ses compétences, ses ressources et son engagement. Nous privilégions une présentation claire des besoins et des objectifs, des échanges transparents sur les projets soutenus, une utilisation responsable des ressources mobilisées, un suivi attentif des réalisations et une communication avec les partenaires sur l’avancement des initiatives.</p>
 <p data-i18n="t130"><b>Vous souhaitez accompagner les projets de Tassakat ?</b> Que vous soyez une entreprise, une fondation, une institution publique, une organisation de coopération ou un membre de la diaspora, nous serions heureux d’échanger avec vous sur les possibilités de collaboration. Notre association reste disponible pour présenter ses réalisations, partager les informations relatives à ses projets et discuter des différentes formes de soutien envisageables. Ensemble, construisons des projets utiles, responsables et durables pour Tassakat.</p>
-<p class="small" data-i18n="t131">Ces engagements sont des principes de fonctionnement de l’association.</p>
 </div>
 </div>
 </section>
@@ -597,9 +605,9 @@ html[lang="ar"] .hero-bg[data-illustrative="true"]::after{content:"صورة تو
 <div>
 <h3 data-i18n="t140">Parlons de votre projet ou de votre proposition</h3>
 <p data-i18n="t141">Pour toute demande d’information, proposition de partenariat ou souhait de participation, vous pouvez contacter directement l’Association Tassakat. Nous pourrons échanger avec vous sur les activités de l’association, ses réalisations et ses projets prioritaires.</p>
-<p class="line"><b data-i18n="t142">WhatsApp :</b> <span id="waText">[NUMÉRO WHATSAPP À AJOUTER]</span></p>
-<p class="line"><b data-i18n="t143">Adresse e-mail :</b> <a href="#contact" id="mailLink">[ADRESSE E-MAIL À AJOUTER]</a></p>
-<p class="line"><b data-i18n="t144">Adresse :</b><span class="t" data-i18n="t145"> Douar Tassakat, Commune d’Aït Abdellah, Province de Taroudant, Région Souss-Massa, Maroc</span></p>
+<p class="line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.2 7.8c.3-.5.6-.5.9-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.5 2.3.3.1.5.1.7-.1l.8-.9c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.6 0 .4-.2 1.2-.7 1.6-.5.4-1.2.7-2 .6-1.1-.1-2.5-.7-4-2-1.7-1.5-2.8-3.3-3-4.4-.2-.8.1-1.6.5-2.1Z"/></svg></span><span class="line-content"><b data-i18n="t142">WhatsApp :</b> <span id="waText">[NUMÉRO WHATSAPP À AJOUTER]</span></span></p>
+<p class="line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span class="line-content"><b data-i18n="t143">Adresse e-mail :</b> <a href="#contact" id="mailLink">[ADRESSE E-MAIL À AJOUTER]</a></span></p>
+<p class="line"><span class="contact-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="line-content"><b data-i18n="t144">Adresse :</b><span class="t" data-i18n="t145"> Douar Tassakat, Commune d’Aït Abdellah, Province de Taroudant, Région Souss-Massa, Maroc</span></span></p>
 </div>
 <div class="wabtns">
 <a class="btn primary" data-i18n="t146" data-wa="general" href="#contact">Contact général / partenariat</a>
@@ -687,9 +695,17 @@ const PREVIEW = !!CONFIG.preview || new URLSearchParams(location.search).has("pr
   if (CONFIG.email) { mail.href = "mailto:" + CONFIG.email; mail.textContent = CONFIG.email; }
   else if (PREVIEW) { mail.classList.add("pending"); mail.removeAttribute("href"); } else mail.closest(".line").hidden = true;
 
-  // Réseaux sociaux (uniquement si fournis)
-  Object.entries(CONFIG.socials).filter(([, u]) => /^https:\/\//i.test(u)).forEach(([n, u]) => {
-    const a = document.createElement("a"); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = n[0].toUpperCase() + n.slice(1); $("#socials").append(a);
+  // Réseaux sociaux : icônes SVG intégrées (aucune bibliothèque externe nécessaire)
+  const socialIcons = {
+    facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.1H7.6V13h2.7v8h3.2Z"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.7" r="1.2"/></svg>',
+    youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.1a3 3 0 0 0-2.1-2.2C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7.1 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.9 3 3 0 0 0 2.1 2.2c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.2 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9ZM9.7 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM3.5 9h3.4v11.5H3.5V9Zm5.5 0h3.3v1.6h.1a3.6 3.6 0 0 1 3.2-1.8c3.4 0 4 2.2 4 5v6.7h-3.4v-5.9c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3v6H9V9Z"/></svg>'
+  };
+  const socialLabels = {facebook:"Facebook", instagram:"Instagram", youtube:"YouTube", linkedin:"LinkedIn"};
+  Object.entries(CONFIG.socials).filter(([n, u]) => socialIcons[n] && /^https:\/\//i.test(u)).forEach(([n, u]) => {
+    const a = document.createElement("a"); a.href = u; a.target = "_blank"; a.rel = "noopener noreferrer";
+    a.setAttribute("aria-label", socialLabels[n]); a.title = socialLabels[n]; a.innerHTML = socialIcons[n]; $("#socials").append(a);
   });
 
   // Indicateurs
