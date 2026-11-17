@@ -54,15 +54,47 @@ h4{font-size:1.1rem;margin:1.4em 0 .5em;font-family:var(--sans);letter-spacing:.
 .sec .narrow.center{margin-inline:auto}
 
 /* En-tête */
-.top{position:sticky;top:0;z-index:50;height:var(--h);display:flex;align-items:center;justify-content:space-between;padding-inline:20px;background:rgba(250,247,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--sand)}
-.brand{display:flex;gap:12px;align-items:center;text-decoration:none}
-.brand strong{display:block;font:700 1.15rem var(--serif);letter-spacing:.12em;color:var(--green)}
-.brand small{display:none;font-size:.7rem;color:var(--mute);line-height:1.2}
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: auto; /* Remplace var(--h) pour que la barre s'adapte au logo */
+  min-height: 96px; /* Garantit un espace suffisant pour le logo de 80px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px; /* Ajoute 8px d'espace en haut et en bas du logo */
+  background: rgba(250,247,240,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--sand);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand strong {
+  display: block;
+  font: 700 1.15rem var(--serif);
+  letter-spacing: .12em;
+  color: var(--green);
+}
+
+.brand small {
+  display: none;
+  font-size: .7rem;
+  color: var(--mute);
+  line-height: 1.2;
+}
+
 .logo {
-  width: 85px; /* Taille idéale pour que le texte en français et en arabe soit lisible */
-  height: 85px;
+  width: 80px; /* Taille idéale pour votre logo */
+  height: 80px;
   border-radius: 50%;
-  background: #ffffff; /* Fond blanc pour s'harmoniser avec votre image */
+  background: #ffffff; /* Fond blanc adapté à votre logo */
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -72,8 +104,9 @@ h4{font-size:1.1rem;margin:1.4em 0 .5em;font-family:var(--sans);letter-spacing:.
 .logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Affiche tout le cercle du logo sans jamais couper la bordure */
+  object-fit: contain; /* Évite de couper les bords ronds du logo */
 }
+
 nav#nav{display:flex;gap:6px;align-items:center}
 nav#nav a{text-decoration:none;font-size:.92rem;font-weight:500;padding:8px 12px;border-radius:99px;transition:background .2s}
 nav#nav a:hover{background:var(--sage-l)}
